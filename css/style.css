@@ -445,7 +445,7 @@ main {
 .pricing {
     /* background: #ebebeb; */
     background: var(--secondary-color);
-    padding: 12rem 2rem 20rem 2rem !important;
+    padding: 8rem 2rem 20rem 2rem !important;
 }
 
 .pricing .box-container .box {
@@ -723,8 +723,19 @@ main {
     .services .container, .projects .container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .about {
-        background: var(--primary-color) url(/images/mobile-about-img.jpg);
+    .bkgd-about {
+        background-image:  url(../images/black-cell-phone.jpg);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        position: relative;
+        z-index: 9999999999999999;
+        height: 100vh;
+        width: 100%;
+        /* background-position:center; */
+    }
+    /* .about {
+        background: var(--primary-color) url(/images/black-cell-phone.jpg);
         /* background: var(--primary-color) url(images/about-img-flipped.png) center / cover no-repeat; */
         display: flex;
         flex-direction: column;
@@ -732,7 +743,7 @@ main {
         background-size:contain;
         background-position:bottom;
         /* background-position:center; */
-    }
+    } */
     .about h1 {
         margin-right: 80px;
         margin-bottom: 150px;
