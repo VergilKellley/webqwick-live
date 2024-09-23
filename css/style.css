@@ -39,6 +39,15 @@
 body {
     /* background-color: #010101; */
 }
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 2;
+}
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -80,7 +89,7 @@ h2, p {
     position: fixed;
     top:0;
     /* left: 0; */
-    width: 100%;
+    width: 100vw;
     max-width: 2500px;
     height: var(--nav-height);
     display: flex;
@@ -130,7 +139,7 @@ section {
 }
 section:not(.home):not(.about):not(.contact) {
     /* padding: 0 2rem; */
-    padding:2rem;
+    padding:50px 0 100px 0;
 }
 main {
     position: relative;
@@ -245,13 +254,12 @@ main {
     opacity: 0;
     text-align: center;
 }
-.about h1 {
+/* .about h1 {
     margin-left: 70px;
-    /* margin-bottom: 2rem; */
     margin-top: -6rem;
     transform: translateX(-12%);
     opacity: 0;
-}
+} */
 .about .contents.show, .about h1.show {
     transform: translateX(0);
     opacity: 1;
@@ -265,7 +273,7 @@ main {
 .services .container, .projects .container {
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
 }
 .services .container .card {
@@ -276,9 +284,10 @@ main {
     position: relative;
     overflow: hidden;
     transform: translateY(60px);
-}.services .container .card:nth-child(2n) {
-    transform: translateY(-60px);
 }
+/* .services .container .card:nth-child(2n) {
+    transform: translateY(-60px);
+} */
 .services .container .card.show {
     transform: translateY(0);
 }
@@ -301,6 +310,7 @@ main {
 .services .container .card .details .summary {
     padding: 0.5rem 0;
     font-size: 1.5rem;
+    height: 170px;
 }
 .services .container .card .details .read-more {
     /* display: none; */
@@ -334,6 +344,7 @@ main {
 .projects .container {
     padding-top: 1.5rem;
     padding-bottom: 40px;
+    width: 80%;
 }
 .projects .container .card {
     display: flex;
@@ -372,6 +383,7 @@ main {
 }
 #demo .container .demo-container {
     margin: auto;
+    width: 80%;
     /* display: flex;
     flex-wrap: wrap; */
 }
@@ -382,16 +394,18 @@ main {
     gap: 3rem;
 } */
 .demo-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
 }
 .demo-container h3 {
     padding:0;
 }
-.demo-text-container {
+/* .demo-text-container {
     width: 45%;
-}
+} */
 .demo-text-container p {
     font-size: 17.6px;
 }
@@ -433,13 +447,15 @@ main {
 /******** PRICING PLANS **********/
 .box-container-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* display: flex;  */
     /* flex-wrap: wrap; 
     gap: 5rem;  */
     gap: 4rem;
     justify-content:center; 
-    margin-top: 50px 10px;
+    /* margin-top: 50px 10px; */
+    margin: 0 auto;
 }
 
 .pricing {
@@ -721,7 +737,10 @@ main {
         padding-top: 7vh;
     }
     .services .container, .projects .container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .services .container {
+        display: block;
     }
     .bkgd-about {
         background-image:  url(../images/black-cell-phone.jpg);
@@ -736,18 +755,18 @@ main {
     }
     /* .about {
         background: var(--primary-color) url(/images/black-cell-phone.jpg);
-        /* background: var(--primary-color) url(images/about-img-flipped.png) center / cover no-repeat; */
+        /* background: var(--primary-color) url(images/about-img-flipped.png) center / cover no-repeat;
         display: flex;
         flex-direction: column;
         background-repeat:no-repeat;
         background-size:contain;
         background-position:bottom;
-        /* background-position:center; */
+     background-position:center;
     } */
-    .about h1 {
+    /* .about h1 {
         margin-right: 80px;
         margin-bottom: 150px;
-    }
+    } */
     .about .contents {
         margin-left: -60vw;
         text-align: left;
@@ -758,14 +777,14 @@ main {
     .about {
         margin-top: -100px ;
     }
-    .about h1 {
+    /* .about h1 {
         margin-bottom: 75px;
-    }
+    } */
 }
 /* mobile devices */
 @media(max-width: 480px) {
     #why-webqwick {
-        width: 100% !important;
+        width: 90% !important;
     }
         .about {
         background-position: center;
@@ -822,8 +841,26 @@ main {
 }
 
 @media(max-width: 425px){
+    .hero-h2 {
+        padding: 0 10px;
+        font-size: 3rem !important;
+    }
     #demo .container .demo-container {
         display: flex !important;
         flex-wrap: wrap !important;
-    };
+    }
+
+    .projects .container {
+        width: 100% !important;
+    }
+
+    .projects .container .card {
+        color: green;
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+
+    #demo .container .demo-container {
+        width: 100% !important;
+    }
 }
